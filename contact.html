@@ -1,13 +1,125 @@
-<h2>Contact Us</h2>
-<p>Call us: <a href="tel:+918805057788">+91 88050 57788</a></p>
-<a href="tel:+918805057788" style="
-    display: inline-block;
-    background-color: #28a745; 
-    color: white; 
-    padding: 12px 25px; 
-    text-decoration: none; 
-    border-radius: 8px;
-    font-weight: bold;
-">
-    Call Now
-</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Sandroxx</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f8f8;
+      color: #333;
+    }
+    .container {
+      max-width: 700px;
+      margin: 60px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #007bff;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    .section h3 {
+      margin-bottom: 8px;
+      color: #444;
+    }
+    .section p {
+      margin: 0;
+      color: #555;
+      line-height: 1.6;
+    }
+    form label {
+      display: block;
+      margin-bottom: 5px;
+      color: #444;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+    form button {
+      background: #007bff;
+      color: #fff;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1em;
+      width: 100%;
+    }
+    form button:hover {
+      background: #0056cc;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Contact Us</h1>
+
+    <!-- Address -->
+    <div class="section">
+      <h3>📍 Address</h3>
+      <p>
+        <strong>Plot No. 70, Shambhu Nagar</strong><br>
+        Sandroxx Real Estate<br>
+        Shivgiri Chowk<br>
+        Nagpur, Maharashtra, 440030<br>
+        India
+      </p>
+    </div>
+
+    <!-- Phone -->
+    <div class="section">
+      <h3>📱 Phone</h3>
+      <p>
+        +91 8805057788<br>
+        <small>Mon – Sat: 9:00 AM – 6:00 PM</small>
+      </p>
+    </div>
+
+    <!-- Email -->
+    <div class="section">
+      <h3>📧 Email</h3>
+      <p>support@sandroxx.in</p>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="section">
+      <h3>📨 Send Us a Message</h3>
+      <form action="#" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone (Optional)</label>
+        <input type="text" id="phone" name="phone">
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+
+</body>
+</html>
+
+
