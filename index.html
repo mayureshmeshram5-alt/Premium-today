@@ -175,34 +175,35 @@
       font-size: 14px;
     }
 
-<style>
-  .whatsapp-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 9999;
-    background: #25d366;
-    color: #fff;
-    padding: 12px 18px;
-    border-radius: 50px;
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    animation: fadeInUp 0.5s ease-in-out;
-  }
-  .whatsapp-btn i {
-    margin-right: 8px;
-    font-size: 20px;
-  }
+/* WhatsApp Floating Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #25d366;
+      color: #fff;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 28px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
 
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-</style>
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 36px;
+      }
+    }
+  </style>
+
+  <!-- FontAwesome for WhatsApp Icon -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
 
 <a href="https://api.whatsapp.com/send?phone=918805057788&text=Hi%20I%20am%20interested%20in%20your%20services!" 
    target="_blank" class="whatsapp-btn">
