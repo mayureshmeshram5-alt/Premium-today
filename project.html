@@ -4,98 +4,124 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects | Sandroxx Real Estates</title>
-
   <style>
-    /* Fixed Header */
-    header {
-      background: #0f172a;
-      padding: 18px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 999;
-    }
-    header h1 {
-      color: #d4af37;
-      font-size: 24px;
-      margin: 0;
-    }
-    nav a {
-      color: #fff;
-      margin-left: 20px;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    nav a:hover {
-      color: #d4af37;
-    }
-
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding-top: 70px; /* header ke niche content */
+      font-family: Arial, sans-serif;
       background: #f8f9fb;
-      color: #1e293b;
+      padding-top: 70px;
     }
 
-    .projects-container {
-      max-width: 1000px;
-      margin: 30px auto;
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
       padding: 20px;
     }
 
-    .project-card {
-      background: #fff;
+    /* big square style */
+    .project-item {
+      position: relative;
+      cursor: pointer;
+      height: 0;
+      padding-bottom: 100%; /* square ratio */
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .project-item img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+      transition: transform 0.3s ease;
+    }
+    .project-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .project-title {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      font-size: 18px;
+      padding: 8px 0;
+    }
+
+    /* modal (popup) */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal img {
+      max-width: 90%;
+      max-height: 80%;
       border-radius: 8px;
-      padding: 15px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    .project-card h3 {
-      margin: 0 0 10px;
-    }
-    .project-card p {
-      margin: 0;
+    .modal-close {
+      position: absolute;
+      top: 15px; right: 25px;
+      font-size: 30px;
+      color: #fff;
+      cursor: pointer;
     }
   </style>
-
 </head>
 <body>
 
-<header>
-  <h1>Sandroxx Real Estates</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="projects.html">Projects</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-
-<div class="projects-container">
-  <h2>Our Projects</h2>
-
-  <div class="project-card">
-    <h3>Residential Flats in Nagpur</h3>
-    <p>Premium apartments with modern amenities — ideal for families.</p>
+<div class="gallery-grid">
+  <!-- Project 1 -->
+  <div class="project-item" onclick="openGallery(['proj1-1.jpg','proj1-2.jpg'])">
+    <img src="proj1-1.jpg" alt="Residential Flats">
+    <div class="project-title">Residential Flats</div>
   </div>
 
-  <div class="project-card">
-    <h3>Commercial Space – Central City</h3>
-    <p>Office and retail spaces in prime location.</p>
+  <!-- Project 2 -->
+  <div class="project-item" onclick="openGallery(['proj2-1.jpg','proj2-2.jpg'])">
+    <img src="proj2-1.jpg" alt="Commercial Space">
+    <div class="project-title">Commercial Space</div>
   </div>
 
-  <div class="project-card">
-    <h3>Plots & Land in Shambhu Nagar</h3>
-    <p>Investment plots available with clear legal approvals.</p>
+  <!-- Project 3 -->
+  <div class="project-item" onclick="openGallery(['proj3-1.jpg','proj3-2.jpg'])">
+    <img src="proj3-1.jpg" alt="Plots in Shambhu Nagar">
+    <div class="project-title">Plots & Land</div>
   </div>
-
-  <!-- Add more projects here -->
 </div>
+
+<!-- Modal popup -->
+<div id="modal" class="modal" onclick="closeGallery()">
+  <span class="modal-close" onclick="closeGallery()">&times;</span>
+  <img id="modal-img" src="">
+</div>
+
+<script>
+  let currentIndex = 0;
+  let currentImages = [];
+
+  function openGallery(images) {
+    currentImages = images;
+    currentIndex = 0;
+    document.getElementById('modal-img').src = images[0];
+    document.getElementById('modal').style.display = 'flex';
+  }
+
+  function closeGallery() {
+    document.getElementById('modal').style.display = 'none';
+  }
+</script>
 
 </body>
 </html>
