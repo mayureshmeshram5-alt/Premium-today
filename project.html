@@ -4,73 +4,69 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects | Sandroxx Real Estates</title>
+
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: #f8f9fb;
-      padding-top: 70px;
+      padding-top: 70px; /* header height space */
     }
 
-    .gallery-grid {
+    /* Grid for projects */
+    .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 18px;
       padding: 20px;
     }
 
-    /* big square style */
-    .project-item {
+    .project-card {
       position: relative;
       cursor: pointer;
-      height: 0;
       padding-bottom: 100%; /* square ratio */
       overflow: hidden;
       border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
-    .project-item img {
+    .project-card img {
       position: absolute;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      top: 0;
-      left: 0;
-      transition: transform 0.3s ease;
-    }
-    .project-item:hover img {
-      transform: scale(1.1);
     }
 
-    .project-title {
+    .project-card .title {
       position: absolute;
       bottom: 0;
       width: 100%;
-      text-align: center;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0,0,0,0.6);
       color: #fff;
+      padding: 8px;
+      text-align: center;
       font-size: 18px;
-      padding: 8px 0;
     }
 
-    /* modal (popup) */
-    .modal {
+    /* Modal (popup) */
+    #modal {
       display: none;
       position: fixed;
-      z-index: 1000;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0,0,0,0.8);
+      background: rgba(0,0,0,0.85);
       justify-content: center;
       align-items: center;
+      z-index: 999;
     }
-    .modal img {
+
+    #modal img {
       max-width: 90%;
       max-height: 80%;
       border-radius: 8px;
     }
-    .modal-close {
+
+    .close-btn {
       position: absolute;
       top: 15px; right: 25px;
       font-size: 30px;
@@ -78,47 +74,52 @@
       cursor: pointer;
     }
   </style>
+
 </head>
 <body>
 
-<div class="gallery-grid">
-  <!-- Project 1 -->
-  <div class="project-item" onclick="openGallery(['proj1-1.jpg','proj1-2.jpg'])">
-    <img src="proj1-1.jpg" alt="Residential Flats">
-    <div class="project-title">Residential Flats</div>
+<header>
+  <h1>Sandroxx Real Estates</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<div class="projects-grid">
+
+  <div class="project-card" onclick="openModal(['om1.jpg','om2.jpg','om3.jpg'])">
+    <img src="images/om1.jpg" alt="Residential Flats">
+    <div class="title">Residential Flats</div>
   </div>
 
-  <!-- Project 2 -->
-  <div class="project-item" onclick="openGallery(['proj2-1.jpg','proj2-2.jpg'])">
-    <img src="proj2-1.jpg" alt="Commercial Space">
-    <div class="project-title">Commercial Space</div>
+  <div class="project-card" onclick="openModal(['om1.jpg','om2.jpg','om3.jpg'])">
+    <img src="images/om1.jpg" alt="Plots & Land">
+    <div class="title">Plots & Land</div>
   </div>
 
-  <!-- Project 3 -->
-  <div class="project-item" onclick="openGallery(['proj3-1.jpg','proj3-2.jpg'])">
-    <img src="proj3-1.jpg" alt="Plots in Shambhu Nagar">
-    <div class="project-title">Plots & Land</div>
-  </div>
 </div>
 
-<!-- Modal popup -->
-<div id="modal" class="modal" onclick="closeGallery()">
-  <span class="modal-close" onclick="closeGallery()">&times;</span>
+<!-- modal popup -->
+<div id="modal" onclick="closeModal()">
+  <span class="close-btn" onclick="closeModal()">&times;</span>
   <img id="modal-img" src="">
 </div>
 
 <script>
-  let currentIndex = 0;
   let currentImages = [];
+  let currentIndex = 0;
 
-  function openGallery(images) {
+  function openModal(images) {
     currentImages = images;
     currentIndex = 0;
     document.getElementById('modal-img').src = images[0];
     document.getElementById('modal').style.display = 'flex';
   }
 
-  function closeGallery() {
+  function closeModal() {
     document.getElementById('modal').style.display = 'none';
   }
 </script>
