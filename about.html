@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <title>About Us | Sandroxx Real Estate</title>
 
-    <!-- IMPORTANT: CSS must be inside HEAD -->
     <style>
         body {
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
-            background-color: #ffffff;
+            background-color: #f9f9f9;
             color: #222;
         }
 
@@ -23,118 +22,108 @@
             text-align: center;
             color: #0a58ff;
             font-size: 36px;
-            font-weight: bold;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         p {
             font-size: 18px;
             line-height: 1.7;
-            margin-bottom: 10px;
         }
 
         h2 {
-            font-size: 26px;
+            font-size: 28px;
             font-weight: bold;
+            margin-top: 40px;
             margin-bottom: 20px;
+            text-align: center;
+            color: #0a58ff;
         }
 
-<style>
-    .founders-container {
-        display: flex;
-        justify-content: space-between; /* left & right */
-        align-items: center;
-        max-width: 700px; /* adjust as needed */
-        margin: 0 auto; /* center the container */
-        padding: 0 20px; /* space on sides */
-    }
+        .founders-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+            gap: 30px;
+            padding: 20px 0;
+        }
 
-    .founder {
-        text-align: center;
-        width: 45%; /* take almost half width */
-    }
+        .founder {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 45%;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
 
-    .founder img {
-        border-radius: 50%;
-        margin-bottom: 10px;
-    }
+        .founder:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+        }
 
-    .founder strong {
-        font-size: 20px;
-        margin-bottom: 4px;
-        display: block;
-    }
+        .founder img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 12px;
+        }
 
-    .designation {
-        font-size: 16px;
-        color: #555;
-        margin: 0;
-    }
-</style>
+        .founder strong {
+            display: block;
+            font-size: 22px;
+            margin-bottom: 6px;
+            color: #333;
+        }
 
+        .designation {
+            font-size: 16px;
+            color: #555;
+            margin: 0;
+        }
+
+        /* Responsive for mobile */
+        @media (max-width: 768px) {
+            .founders-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .founder {
+                width: 100%;
+            }
+        }
+    </style>
 
 </head>
-
 <body>
 
     <div class="container">
         <h1>About Us</h1>
 
         <p>
-            At Sandroxx Real Estate, we are a dedicated real estate channel partner committed to empowering
-            developers and builders to expand their business through high-quality lead generation. With a
-            strategic approach, data-driven strategies, and a client-centric focus, we help maximize your
-            market reach and ROI. Our mission is to bridge the gap between property developers and serious
-            buyers, ensuring every lead adds real value to your business growth.
+            At <strong>Sandroxx Real Estate</strong>, we are dedicated to empowering real estate developers and builders with high-quality, strategic lead generation. By combining data-driven methods with client-centric service, we help expand your market reach and maximize ROI. Our mission is to bridge the gap between property developers and serious buyers, making every lead meaningful for your business growth.
         </p>
 
         <h2>Meet Our Founders</h2>
 
-  <div class="founders-container">
-    <div class="founder">
-        <img src="images/parish.jpeg" alt="Mr. Parish Bhoutkar" width="150">
-        <strong>Mr. Parish Bhoutkar</strong>
-        <p class="designation">(Co-Founder & Designated Partner)</p>
-    </div>
+        <div class="founders-container">
+            <div class="founder">
+                <img src="images/parish.jpeg" alt="Mr. Parish Bhoutkar">
+                <strong>Mr. Parish Bhoutkar</strong>
+                <p class="designation">(Co-Founder & Designated Partner)</p>
+            </div>
 
-    <div class="founder">
-        <img src="images/Mayur.png" alt="Mr. Mayuresh Meshram" width="150">
-        <strong>Mr. Mayuresh Meshram</strong>
-        <p class="designation">(Co-Founder & Partner)</p>
-    </div>
-</div>
-
-
+            <div class="founder">
+                <img src="images/Mayur.png" alt="Mr. Mayuresh Meshram">
+                <strong>Mr. Mayuresh Meshram</strong>
+                <p class="designation">(Co-Founder & Partner)</p>
+            </div>
+        </div>
     </div>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
