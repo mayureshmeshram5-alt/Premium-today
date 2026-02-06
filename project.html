@@ -82,6 +82,7 @@
   position: relative;
   width: 100%;
   height: 200px;
+  overflow: hidden;
 }
 
 .slide {
@@ -92,13 +93,14 @@
   top: 0;
   left: 100%;
   opacity: 0;
-  transition: all 0.5s ease;
+  transition: 0.5s ease;
 }
 
 .slide.active {
   left: 0;
   opacity: 1;
 }
+
 
 .slide.prev {
   left: -100%;
