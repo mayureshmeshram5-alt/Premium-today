@@ -259,6 +259,38 @@
   <strong>Disclaimer:</strong> We are channel partners facilitating marketing and site visits. We are not developers or owners of the projects showcased. RERA registration is under process. All images are for representation purposes only.
 </footer>
 
+  <script>
+document.querySelectorAll('.project-card').forEach(card => {
+  const slides = card.querySelectorAll('.slide');
+  const nextBtn = card.querySelector('.next-btn');
+  const prevBtn = card.querySelector('.prev-btn');
+  let currentIndex = 0;
+
+  function showSlide(index) {
+    slides.forEach((s, i) => {
+      s.classList.remove('active');
+      if (i === index) s.classList.add('active');
+    });
+    currentIndex = index;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    let nextIndex = (currentIndex + 1) % slides.length;
+    showSlide(nextIndex);
+  });
+
+  prevBtn.addEventListener('click', () => {
+    let prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(prevIndex);
+  });
+
+  setInterval(() => {
+    let nextIndex = (currentIndex + 1) % slides.length;
+    showSlide(nextIndex);
+  }, 3000);
+});
+</script>
+
 
 </body>
 </html>
