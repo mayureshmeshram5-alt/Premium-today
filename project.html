@@ -194,12 +194,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 20px;
+    padding: 12px 24px;
     background: #fff;
     border-bottom: 1px solid #ddd;
 ">
 
-  <h1 style="margin: 0; font-size: 22px; color: #000;">
+  <h1 style="
+    margin: 0; 
+    font-size: 24px; 
+    color: #000; 
+    font-weight: 700;
+    letter-spacing: 1px;
+  ">
     Sandroxx Real Estates
   </h1>
 
@@ -208,12 +214,18 @@
         font-size: 18px;
         color: #000;
         text-decoration: none;
-        padding: 12px 20px;
+        padding: 10px 22px;
         border: 2px solid #000;
         border-radius: 8px;
         background: #fff;
         display: inline-block;
-    ">Contact Us</a>
+        transition: 0.3s;
+    " 
+    onmouseover="this.style.background='#000'; this.style.color='#fff';"
+    onmouseout="this.style.background='#fff'; this.style.color='#000';"
+    >
+      Contact Us
+    </a>
   </nav>
 
 </header>
