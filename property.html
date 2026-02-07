@@ -1,102 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Plot Details | Sandroxx Real Estates</title>
+<meta charset="UTF‑8">
+<meta name="viewport" content="width=device‑width, initial‑scale=1.0">
+<title>Ozen Plot | Sandroxx Real Estates</title>
+
+<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-  body { font-family: Poppins, sans-serif; margin: 20px; }
-  .container { max-width: 800px; margin:auto; }
-  h2 { color:#0f172a; }
-  .price { color:#c48b0f; font-weight:600; }
-  .btn-whatsapp { background:#25d366; color:#fff; padding:12px 25px; text-decoration:none; border-radius:8px; }
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans‑serif;
+    background: #f8f9fb;
+    color: #1e293b;
+  }
+  header {
+    background: #0f172a;
+    padding: 15px 8%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  header img {
+    max-width: 140px;
+    height: auto;
+  }
+  header h1 {
+    color: #d4af37;
+    margin: 0;
+    font-size: 24px;
+  }
+  .container {
+    padding: 40px 8%;
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  }
+  .gallery {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin‑bottom: 25px;
+  }
+  .gallery img {
+    width: 100%;
+    height: 300px;
+    object‑fit: cover;
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s ease;
+  }
+  .gallery img.active {
+    opacity: 1;
+  }
+  .gallery button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(‑50%);
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border‑radius: 4px;
+  }
+  .gallery .prev { left: 10px; }
+  .gallery .next { right: 10px; }
+  h2 { margin: 0 0 15px; color: #0f172a; font‑size: 26px; }
+  .details li {
+    margin: 8px 0;
+    font‑size: 16px;
+    list‑style: none;
+  }
+  .details li::before {
+    content: "✔️ ";
+    margin‑right: 4px;
+  }
+  .btn‑whatsapp {
+    display: inline‑block;
+    background: #25d366;
+    color: #fff;
+    padding: 12px 24px;
+    border‑radius: 8px;
+    font‑size: 18px;
+    text‑decoration: none;
+    font‑weight: 600;
+    margin‑top: 20px;
+  }
+  .btn‑whatsapp:hover {
+    background: #1ebe57;
+  }
+  footer {
+    background: #0f172a;
+    color: #fff;
+    text‑align: center;
+    padding: 25px 8%;
+    margin‑top: 40px;
+  }
 </style>
 </head>
 <body>
 
+<!-- HEADER -->
+<header>
+  <a href="index.html">
+    <img src="images/logo.png" alt="Logo">
+  </a>
+  <h1>Sandroxx Real Estates</h1>
+</header>
+
 <div class="container">
-  <h2 id="plot-title">Plot Title</h2>
 
-  <p><strong>📍 Location:</strong> <span id="plot-location"></span></p>
-  <p><strong>📏 Size:</strong> <span id="plot-size"></span></p>
-  <p><strong class="price">💰 Price:</strong> <span id="plot-price"></span></p>
+  <!-- Gallery -->
+  <div class="gallery">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
 
-  <h3>Plot Highlights</h3>
-  <ul id="plot-highlights"></ul>
+    <img src="images/om1.jpg" class="active">
+    <img src="images/om2.jpg">
+    <img src="images/om3.jpg">
+    <img src="images/om4.jpg">
+  </div>
+
+  <!-- Plot Info -->
+  <h2>Ozen Plot — Wardha Road, Nagpur</h2>
+
+  <ul class="details">
+    <li>📍 Location: Wardha Road, Nagpur</li>
+    <li>📏 Size: 1200 sq ft (30×40 ft)</li>
+    <li>💰 Price: ₹ 22 L – ₹ 30 L</li>
+    <li>Corner Plot</li>
+    <li>30 ft wide road</li>
+    <li>Clear Title</li>
+    <li>Approved Layout</li>
+  </ul>
 
   <h3>Nearby & Connectivity</h3>
-  <ul id="plot-connectivity"></ul>
+  <ul class="details">
+    <li>1.5 km from NH‑53</li>
+    <li>2 km from Wardha Road Market</li>
+  </ul>
 
-  <a id="whatsapp-link" href="#" target="_blank" class="btn-whatsapp">📱 WhatsApp Now</a>
+  <a href="https://wa.me/918805057788" class="btn‑whatsapp" target="_blank">📱 WhatsApp Now</a>
+
 </div>
 
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 Sandroxx Real Estates. All rights reserved.</p>
+</footer>
+
+
 <script>
-// Example data (later you can make this dynamic)
-const plots = {
-  ozen: {
-    title: "Ozen",
-    location: "Wardha Road, Nagpur",
-    size: "1200 sq ft (30×40 ft)",
-    price: "₹ 22 L – ₹ 30 L",
-    highlights: [
-      "Corner Plot",
-      "30 ft wide road",
-      "Clear Title",
-      "Approved Layout"
-    ],
-    connectivity: [
-      "1.5 km from NH‑53",
-      "2 km from Wardha Road Market"
-    ],
-    whatsapp: "https://wa.me/918805057788"
-  },
-  mangalam: {
-    title: "Mangalam",
-    location: "Koradi Road, Nagpur",
-    size: "1100 sq ft (28×40 ft)",
-    price: "₹ 22 L – ₹ 30 L",
-    highlights: [
-      "Garden Facing",
-      "25 ft road",
-      "Clear Documents",
-      "Electricity & Water"
-    ],
-    connectivity: [
-      "1 km from Koradi Main Road",
-      "Near Bus Stop"
-    ],
-    whatsapp: "https://wa.me/918805057788"
-  }
-};
+// Gallery Slider Script
+const imgs = document.querySelectorAll('.gallery img');
+const next = document.querySelector('.gallery .next');
+const prev = document.querySelector('.gallery .prev');
+let idx = 0;
 
-// Read query param
-const params = new URLSearchParams(window.location.search);
-const plotKey = params.get("plot");
-const data = plots[plotKey] || plots.ozen;
+function showImg(i) {
+  imgs.forEach((img, j) => {
+    img.classList.remove('active');
+    if(j === i) img.classList.add('active');
+  });
+}
 
-// Fill content
-document.getElementById("plot-title").innerText = data.title + " Plot";
-document.getElementById("plot-location").innerText = data.location;
-document.getElementById("plot-size").innerText = data.size;
-document.getElementById("plot-price").innerText = data.price;
-
-const highlightsList = document.getElementById("plot-highlights");
-data.highlights.forEach(item => {
-  const li = document.createElement("li");
-  li.innerText = "✔️ " + item;
-  highlightsList.appendChild(li);
+next.addEventListener('click', () => {
+  idx = (idx + 1) % imgs.length;
+  showImg(idx);
 });
 
-const connectList = document.getElementById("plot-connectivity");
-data.connectivity.forEach(item => {
-  const li = document.createElement("li");
-  li.innerText = "📍 " + item;
-  connectList.appendChild(li);
+prev.addEventListener('click', () => {
+  idx = (idx - 1 + imgs.length) % imgs.length;
+  showImg(idx);
 });
 
-document.getElementById("whatsapp-link").href = data.whatsapp;
-
+// Auto slider
+setInterval(() => {
+  idx = (idx + 1) % imgs.length;
+  showImg(idx);
+}, 3000);
 </script>
 
 </body>
