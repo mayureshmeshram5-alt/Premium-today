@@ -5,78 +5,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects | Sandroxx Real Estates</title>
 
-  <!-- Google Font -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+  <!-- FontAwesome for arrows (optional) -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-  <style>
+
+   <style>
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
       background: #f8f9fb;
       color: #1e293b;
-      padding-top: 80px; /* space for fixed header */
+      scroll-behavior: smooth;
+    }
     }
 
     /* 🚀 FIXED HEADER */
+/* HEADER */
     header {
       background: #0f172a;
       padding: 18px 8%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: fixed;
+      position: sticky;
       top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 9999; /* high z-index so content doesn't overlap */
+      z-index: 100;
+      flex-wrap: wrap;
     }
+
     header h1 {
       color: #d4af37;
       font-size: 26px;
       margin: 0;
       font-weight: 700;
     }
-    nav a {
+
+     nav a {
       color: #ffffff;
       margin-left: 25px;
-      font-weight: 500;
       text-decoration: none;
+      font-weight: 500;
       transition: color 0.3s;
-      font-size: 16px;
     }
+
     nav a:hover {
       color: #d4af37;
     }
 
-    /* Projects Section */
+     /* PROJECTS SECTION */
     .projects-section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 30px 8%;
+      padding: 80px 8%;
     }
+
     .section-title {
       text-align: center;
       font-size: 32px;
-      margin-bottom: 30px;
+      margin-bottom: 50px;
       font-weight: 600;
-      color: #0f172a;
     }
+
 
     /* 📦 Stylish Cards */
-    .projects-grid {
+   .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
     }
 
-  .project-card {
-  width: 300px;
-  border-radius: 12px;
-  overflow: hidden;
-  background: #fff;
-  margin: 15px;
-}
+
+ .project-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+
 
 .slider {
   position: relative;
@@ -113,125 +125,94 @@
 }
 
 .project-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover; /* makes image fit nicely */
-  display: block;
-}
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
 
-.card-info {
-  padding: 15px;
-  text-align: left;
-}
+    .card-info {
+      padding: 15px;
+    }
 
-.card-info h3 {
-  font-size: 1.2rem;
-  margin: 0 0 8px;
-  color: #111;
-}
+    .card-info h3 {
+      margin: 0 0 8px;
+      color: #0f172a;
+      font-size: 1.2rem;
+    }
 
-.card-info .location {
-  font-size: 0.95rem;
-  color: #555;
-  margin-bottom: 6px;
-}
+    .card-info .location {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 6px;
+    }
 
-.card-info .price {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #c48b0f;
-  margin-bottom: 10px;
-}
-
-.btn-view {
-  display: inline-block;
-  background: #0a1c35;
-  color: #fff;
-  padding: 8px 14px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 0.95rem;
-  transition: background 0.3s;
-}
-
-.btn-view:hover {
-  background: #08203b;
-}
-    .arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  border: none;
-  padding: 8px 12px;
-  cursor: pointer;
-  font-size: 18px;
-  border-radius: 4px;
-  z-index: 10;
-}
-
-.prev-btn {
-  left: 10px;
-}
-
-.next-btn {
-  right: 10px;
-}
-
-.arrow:hover {
-  background: rgba(0, 0, 0, 0.8);
-}
+    .card-info .price {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #c48b0f;
+      margin-bottom: 10px;
+    }
 
 
+  .btn-view {
+      display: inline-block;
+      background: #0a1c35;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-view:hover {
+      background: #08203b;
+      transform: translateY(-2px);
+    }
+
+   .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      font-size: 18px;
+      border-radius: 4px;
+      z-index: 10;
+    }
+
+    .prev-btn {
+      left: 10px;
+    }
+
+    .next-btn {
+      right: 10px;
+    }
+
+    .arrow:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
 
   </style>
 </head>
 <body>
 
 <!-- 🚀 HEADER -->
-<header style="
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 24px;
-    background: #fff;
-    border-bottom: 1px solid #ddd;
-">
-
- <h1 style="margin: 0; font-size: 24px; color: #000; font-weight: bold;">
-  <a href="index.html" style="text-decoration: none; color: inherit;">
-    Sandroxx Real Estates
-  </a>
-</h1>
-
-
+<header>
+  <h1><a href="index.html" style="color: inherit; text-decoration: none;">Sandroxx Real Estates</a></h1>
   <nav>
-    <a href="contact.html" style="
-        font-size: 18px;
-        color: #000;
-        text-decoration: none;
-        padding: 10px 22px;
-        border: 2px solid #000;
-        border-radius: 8px;
-        background: #fff;
-        display: inline-block;
-        transition: 0.3s;
-    " 
-    onmouseover="this.style.background='#000'; this.style.color='#fff';"
-    onmouseout="this.style.background='#fff'; this.style.color='#000';"
-    >
-      Contact Us
-    </a>
+    <a href="contact.html">Contact</a>
   </nav>
-
 </header>
 
 
   <!-- 🏗 PROJECTS -->
   <section class="projects-section">
     <h2 class="section-title">Explore Our Projects</h2>
-
     <div class="projects-grid">
       
 
@@ -274,23 +255,11 @@
     </div>
   </section>
 <!-- FOOTER DISCLAIMER -->
-<footer style="
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: #fff;
-    padding: 10px 15px;
-    font-size: 14px;
-    color: #555;
-    text-align: center;
-    border-top: 1px solid #ddd;
-    z-index: 999;
-">
-  <strong>Disclaimer:</strong> We are channel partners facilitating marketing and site visits. We are not developers or owners of the projects showcased. RERA registration is under process. All images are for representation purposes only.
+<footer>
+  &copy; 2026 Sandroxx Real Estates. All rights reserved.
 </footer>
 
-  <script>
+<script>
 document.querySelectorAll('.project-card').forEach(card => {
   const slides = card.querySelectorAll('.slide');
   const nextBtn = card.querySelector('.next-btn');
@@ -321,7 +290,6 @@ document.querySelectorAll('.project-card').forEach(card => {
   }, 3000);
 });
 </script>
-
 
 </body>
 </html>
