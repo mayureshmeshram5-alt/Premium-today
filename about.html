@@ -92,11 +92,13 @@
     }
 
     .card img {
-        width: 100%;
-        height: 250px;
-        object-fit: cover;
-        display: block;
-    }
+    width: 100%;
+    height: auto;
+    max-height: 300px; /* adjust as per image */
+    object-fit: contain; /* poori image dikh jayegi, white space aa sakta hai */
+    display: block;
+}
+
 
     .card-info {
         padding: 20px;
@@ -199,3 +201,4 @@
 
 </body>
 </html>
+
