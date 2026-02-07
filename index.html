@@ -172,6 +172,23 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     }
 
+     .whatsapp-btn {
+      display: inline-block;
+      background-color: #25d366;
+      color: #fff;
+      font-weight: 600;
+      padding: 12px 26px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 18px;
+      transition: all 0.3s ease;
+    }
+
+    .whatsapp-btn:hover {
+      background-color: #1ebe57;
+      transform: translateY(-2px);
+    }
+    
     /* FOOTER */
     footer {
       background: #020617;
@@ -179,6 +196,7 @@
       padding: 30px 8%;
       text-align: center;
       font-size: 14px;
+      margin-top: 50px;
     }
 
 /* WhatsApp Floating Button */
@@ -200,9 +218,56 @@
       z-index: 1000;
     }
 
+  /* MOBILE RESPONSIVE */
     @media (max-width: 768px) {
+      .hero {
+        padding: 80px 5%;
+      }
+
       .hero h2 {
-        font-size: 36px;
+        font-size: 28px;
+        max-width: 100%;
+      }
+
+      .hero p {
+        font-size: 16px;
+        max-width: 90%;
+      }
+
+      .btn-book-visit, .whatsapp-btn {
+        font-size: 16px;
+        padding: 10px 20px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .why-us li {
+        font-size: 16px;
+        padding: 8px 0;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px 5%;
+      }
+
+      nav {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      nav a {
+        margin: 8px 0;
+      }
+
+      footer {
+        padding: 20px 5%;
+        font-size: 13px;
       }
     }
   </style>
@@ -227,11 +292,9 @@
 <section class="hero">
   <h2 id="hero-title">Your Trusted Real Estate Channel Partner in Nagpur</h2>
   <p id="hero-text">Residential • Commercial • Plots • Investment Opportunities with Verified Developers</p>
-<a href="#whatsapp-now" class="btn-book-visit">
-  📅 Book My Site Visit
-</a>
+<a href="#whatsapp-now" class="btn-book-visit"> Book My Site Visit</a>
 
-  
+
 </section>
 
 <section>
@@ -264,27 +327,15 @@
     <h2>Get Best Property Deals in Nagpur</h2>
     <p>Call or WhatsApp us for exclusive inventory & site visits</p>
    <section id="whatsapp-now" style="text-align: center; margin-top: 50px;">
-  <a href="https://wa.me/918805057788" class="btn whatsapp-btn" target="_blank">
-    WhatsApp Now
-  </a>
+  <a href="https://wa.me/918805057788" class="btn whatsapp-btn" target="_blank">WhatsApp Now</a>
 </section>
 
 <!-- FOOTER DISCLAIMER -->
 <footer style="
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: #fff;
-    padding: 10px 15px;
-    font-size: 14px;
-    color: #555;
-    text-align: center;
-    border-top: 1px solid #ddd;
-    z-index: 999;
-">
-  <strong>Disclaimer:</strong> We are channel partners facilitating marketing and site visits. We are not developers or owners of the projects showcased. RERA registration is under process. All images are for representation purposes only.
+    <footer style="text-align: center; padding: 15px; color: #555; background: #f8f9fb;">
+  <p>&copy; 2026 Sandroxx Real Estates. All rights reserved.</p>
 </footer>
+
 
 
 <!-- WhatsApp Floating Button -->
