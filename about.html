@@ -5,175 +5,160 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Us | Sandroxx Real Estate</title>
 <style>
-    /* ---------- General ---------- */
-    body {
-        margin: 0;
-        font-family: 'Poppins', sans-serif;
-        background-color: #f9f9f9;
-        color: #222;
-        scroll-behavior: smooth;
-    }
-    a { text-decoration: none; color: inherit; }
+/* ---------- General ---------- */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #222;
+    scroll-behavior: smooth;
+}
+a { text-decoration: none; color: inherit; }
 
-    /* ---------- Header ---------- */
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 40px;
-        background-color: #0a58ff;
-        color: #fff;
-        position: relative;
-        z-index: 1000;
-    }
-    header .logo {
-        font-size: 24px;
-        font-weight: bold;
-    }
-    header a.home-btn {
-        display: inline-block;
-        background: #fff;
-        color: #0a58ff;
-        padding: 10px 20px;
-        border-radius: 6px;
-        font-weight: bold;
-        text-align: center;
-        transition: 0.3s;
-    }
-    header a.home-btn:hover {
-        background: #e6e6e6;
-    }
+/* ---------- Header ---------- */
+header {
+    background: #0a58ff;
+    padding: 20px;
+    position: relative;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+header .home-btn {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    color: #0a58ff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+    transition: 0.3s;
+}
+header .home-btn:hover {
+    background: #e6e6e6;
+}
 
-    /* ---------- Hero ---------- */
-    .hero {
-        padding: 80px 20px 50px 20px;
-        text-align: center;
-        background: linear-gradient(to right, #0a58ff, #3a85ff);
-        color: #fff;
-    }
-    .hero h1 {
-        font-size: 3rem;
-        margin-bottom: 20px;
-        opacity: 0;
-        transform: translateY(20px);
-        animation: fadeInUp 1s forwards;
-    }
-    .hero p {
-        font-size: 1.2rem;
-        max-width: 800px;
-        margin: 0 auto;
-        opacity: 0;
-        transform: translateY(20px);
-        animation: fadeInUp 1s forwards;
-        animation-delay: 0.3s;
-    }
+/* ---------- Hero ---------- */
+.hero {
+    padding: 80px 20px 50px 20px;
+    text-align: center;
+    background: linear-gradient(to right, #0a58ff, #3a85ff);
+    color: #fff;
+}
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+.hero p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+    animation-delay: 0.3s;
+}
 
-    /* ---------- Team Section ---------- */
-    .team {
-        max-width: 1000px;
-        margin: 60px auto;
-        padding: 0 20px;
-        text-align: center;
-    }
-    .team h2 {
-        font-size: 2.5rem;
-        color: #0a58ff;
-        margin-bottom: 50px;
-        opacity: 0;
-        transform: translateY(20px);
-        animation: fadeInUp 1s forwards;
-    }
-    .team-cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 30px;
-    }
-    .card {
-        background: #fff;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        transition: transform 0.4s, box-shadow 0.4s;
-        position: relative;
-        cursor: pointer;
-        opacity: 0;
-        transform: translateY(20px);
-        animation: fadeInUp 1s forwards;
-    }
-    .card img {
-        width: 100%;
-        height: 280px;
-        object-fit: cover;
-        object-position: top; /* head visible */
-        display: block;
-    }
-    .card-info {
-        padding: 20px;
-    }
-    .card-info h3 {
-        margin: 0 0 10px;
-        color: #0a58ff;
-        font-size: 22px;
-    }
-    .card-info p {
-        margin: 0;
-        color: #555;
-    }
-    .card::after {
-        content: '';
-        position: absolute;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        background: rgba(10, 88, 255, 0.1);
-        opacity: 0;
-        transition: opacity 0.4s;
-    }
-    .card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-    }
-    .card:hover::after { opacity: 1; }
+/* ---------- Team Section ---------- */
+.team {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+.team h2 {
+    font-size: 2.5rem;
+    color: #0a58ff;
+    margin-bottom: 50px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+.team-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+.card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.4s, box-shadow 0.4s;
+    position: relative;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+.card img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain; /* poori image visible */
+    display: block;
+}
+.card-info {
+    padding: 20px;
+}
+.card-info h3 {
+    margin: 0 0 10px;
+    color: #0a58ff;
+    font-size: 22px;
+}
+.card-info p {
+    margin: 0;
+    color: #555;
+}
+.card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(10, 88, 255, 0.1);
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+.card:hover::after { opacity: 1; }
 
-    /* ---------- Footer ---------- */
-    footer {
-        background: #fff;
-        padding: 15px;
-        text-align: center;
-        border-top: 1px solid #ddd;
-        font-size: 14px;
-        color: #555;
-    }
+/* ---------- Footer ---------- */
+footer {
+    background: #fff;
+    padding: 15px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+    color: #555;
+}
 
-    /* ---------- Animations ---------- */
-    @keyframes fadeInUp {
-        to { opacity: 1; transform: translateY(0); }
-    }
+/* ---------- Animations ---------- */
+@keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
+}
 
-    /* ---------- Responsive ---------- */
-    @media(max-width:768px){
-        .hero h1 { font-size: 2.2rem; }
-        .hero p { font-size: 1rem; }
-    }
+/* ---------- Responsive ---------- */
+@media(max-width:768px){
+    .hero h1 { font-size: 2.2rem; }
+    .hero p { font-size: 1rem; }
+}
 </style>
 </head>
 <body>
 
-    <header style="background:#0a58ff; padding:20px; text-align:center; position:relative;">
-    <div class="logo" style="color:#fff; font-size:24px; font-weight:bold;">Sandroxx Real Estates</div>
-    <!-- Home button -->
-    <a href="index.html" style="
-        position:absolute;
-        right:20px;
-        top:50%;
-        transform:translateY(-50%);
-        background:#fff;
-        color:#0a58ff;
-        padding:10px 20px;
-        border-radius:6px;
-        font-weight:bold;
-    ">Home</a>
-</header>
-
+<header>
+    Sandroxx Real Estates
+    <a href="index.html" class="home-btn">Home</a>
 </header>
 
 <!-- Hero Section -->
@@ -193,7 +178,6 @@
                 <p>Co-Founder & Designated Partner</p>
             </div>
         </div>
-
         <div class="card" style="animation-delay:0.4s;">
             <img src="images/Mayuresh.jpeg" alt="Mr. Mayuresh Meshram">
             <div class="card-info">
@@ -210,5 +194,3 @@
 
 </body>
 </html>
-
-
