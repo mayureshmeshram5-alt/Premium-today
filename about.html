@@ -1,163 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Sandroxx Real Estate</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Sandroxx Real Estate</title>
+<style>
+    /* ---------- General ---------- */
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background-color: #f9f9f9;
+        color: #222;
+        scroll-behavior: smooth;
+    }
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f9f9f9;
-            color: #222;
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    /* ---------- Header ---------- */
+    header {
+        background-color: #0a58ff;
+        padding: 20px 0;
+        text-align: center;
+        color: #fff;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+        padding: 80px 20px 50px 20px;
+        text-align: center;
+        background: linear-gradient(to right, #0a58ff, #3a85ff);
+        color: #fff;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s forwards;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s forwards;
+        animation-delay: 0.3s;
+    }
+
+    /* ---------- Team Section ---------- */
+    .team {
+        max-width: 1000px;
+        margin: 60px auto;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .team h2 {
+        font-size: 2.5rem;
+        color: #0a58ff;
+        margin-bottom: 50px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s forwards;
+    }
+
+    .team-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+    }
+
+    .card {
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        transition: transform 0.4s, box-shadow 0.4s;
+        position: relative;
+        cursor: pointer;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s forwards;
+    }
+
+    .card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .card-info {
+        padding: 20px;
+    }
+
+    .card-info h3 {
+        margin: 0 0 10px;
+        color: #0a58ff;
+        font-size: 22px;
+    }
+
+    .card-info p {
+        margin: 0;
+        color: #555;
+    }
+
+    .card::after {
+        content: '';
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(10, 88, 255, 0.1);
+        opacity: 0;
+        transition: opacity 0.4s;
+    }
+
+    .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+
+    .card:hover::after {
+        opacity: 1;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+        background: #fff;
+        padding: 15px;
+        text-align: center;
+        border-top: 1px solid #ddd;
+        font-size: 14px;
+        color: #555;
+    }
+
+    /* ---------- Animations ---------- */
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
         }
+    }
 
-        .container {
-            max-width: 900px;
-            margin: 60px auto;
-            padding: 0 20px;
+    /* ---------- Responsive ---------- */
+    @media(max-width:768px){
+        .hero h1 {
+            font-size: 2.2rem;
         }
-
-        h1 {
-            text-align: center;
-            color: #0a58ff;
-            font-size: 36px;
-            margin-bottom: 20px;
+        .hero p {
+            font-size: 1rem;
         }
-
-        p {
-            font-size: 18px;
-            line-height: 1.7;
-        }
-
-        h2 {
-            font-size: 28px;
-            font-weight: bold;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            text-align: center;
-            color: #0a58ff;
-        }
-
-        .founders-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 800px;
-            margin: 0 auto;
-            gap: 30px;
-            padding: 20px 0;
-        }
-
-        .founder {
-            background: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            width: 45%;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .founder:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
-        }
-
-        .founder img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            margin-bottom: 12px;
-        }
-
-        .founder strong {
-            display: block;
-            font-size: 22px;
-            margin-bottom: 6px;
-            color: #333;
-        }
-
-        .designation {
-            font-size: 16px;
-            color: #555;
-            margin: 0;
-        }
-
-        /* Responsive for mobile */
-        @media (max-width: 768px) {
-            .founders-container {
-                flex-direction: column;
-                gap: 30px;
-            }
-
-            .founder {
-                width: 100%;
-            }
-        }
-    </style>
-
+    }
+</style>
 </head>
 <body>
 
-    <!-- 🚀 HEADER (Home Link) -->
-    <header class="main-header">
-        <a href="index.html" style="text-decoration: none; color: inherit;">
-      Sandroxx Real Estates
-    </a>
-  </h1>
-    </header>
+<header>Sandroxx Real Estates</header>
 
+<!-- Hero Section -->
+<section class="hero">
+    <h1>About Us</h1>
+    <p>At <strong>Sandroxx Real Estate</strong>, we empower developers and builders with strategic, high-quality lead generation solutions. We bridge the gap between property developers and serious buyers, ensuring every lead drives real business growth.</p>
+</section>
 
-    <div class="container">
-        <h1>About Us</h1>
-
-
-        <p>
-            At <strong>Sandroxx Real Estate</strong>, we are dedicated to empowering real estate developers and builders with high-quality, strategic lead generation. By combining data-driven methods with client-centric service, we help expand your market reach and maximize ROI. Our mission is to bridge the gap between property developers and serious buyers, making every lead meaningful for your business growth.
-        </p>
-
-        <h2>Meet Our Founders</h2>
-
-        <div class="founders-container">
-            <div class="founder">
-                <img src="images/parish.jpeg" alt="Mr. Parish Bhoutkar">
-                <strong>Mr. Parish Bhoutkar</strong>
-                <p class="designation">(Co-Founder & Designated Partner)</p>
-            </div>
-
-            <div class="founder">
-                <img src="images/Mayuresh.jpeg" alt="Mr. Mayuresh Meshram">
-                <strong>Mr. Mayuresh Meshram</strong>
-                <p class="designation">(Co-Founder & Partner)</p>
+<!-- Team Section -->
+<section class="team">
+    <h2>Meet Our Founders</h2>
+    <div class="team-cards">
+        <div class="card" style="animation-delay:0.2s;">
+            <img src="images/parish.jpeg" alt="Mr. Parish Bhoutkar">
+            <div class="card-info">
+                <h3>Mr. Parish Bhoutkar</h3>
+                <p>Co-Founder & Designated Partner</p>
             </div>
         </div>
-  </div>
-  </section>
-<!-- FOOTER DISCLAIMER -->
-<footer style="
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: #fff;
-    padding: 10px 15px;
-    font-size: 14px;
-    color: #555;
-    text-align: center;
-    border-top: 1px solid #ddd;
-    z-index: 999;
-">
-  <strong>Disclaimer:</strong> We are channel partners facilitating marketing and site visits. We are not developers or owners of the projects showcased. RERA registration is under process. All images are for representation purposes only.
-</footer>
 
+        <div class="card" style="animation-delay:0.4s;">
+            <img src="images/Mayuresh.jpeg" alt="Mr. Mayuresh Meshram">
+            <div class="card-info">
+                <h3>Mr. Mayuresh Meshram</h3>
+                <p>Co-Founder & Partner</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+<strong>Disclaimer:</strong> We are channel partners facilitating marketing and site visits. We are not developers or owners of the projects showcased. RERA registration is under process. All images are for representation purposes only.
+</footer>
 
 </body>
 </html>
-
-
-
-
-
