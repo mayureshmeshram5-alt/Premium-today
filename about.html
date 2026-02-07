@@ -19,7 +19,7 @@ a { text-decoration: none; color: inherit; }
 header {
     background: #0a58ff;
     padding: 20px;
-    position: fixed; /* changed from relative to fixed */
+    position: fixed;   /* changed from relative */
     top: 0;
     left: 0;
     width: 100%;
@@ -27,9 +27,8 @@ header {
     font-size: 24px;
     font-weight: bold;
     text-align: center;
-    z-index: 1000; /* ensure it is always on top */
+    z-index: 1000;     /* ensures it is always on top */
 }
-
 
 header .home-btn {
     position: absolute;
@@ -43,20 +42,22 @@ header .home-btn {
     font-weight: bold;
     text-align: center;
     transition: 0.3s;
-    z-index: 20; /* added to make sure it is on top of hero */
+    z-index: 1001;      /* make sure it's above header background */
 }
 
 header .home-btn:hover {
     background: #e6e6e6;
 }
 
+
 /* ---------- Hero ---------- */
 .hero {
-    padding: 120px 20px 50px 20px; /* top padding increased to 120px */
+    padding: 120px 20px 50px 20px; /* top padding increased for fixed header */
     text-align: center;
     background: linear-gradient(to right, #0a58ff, #3a85ff);
     color: #fff;
 }
+
 
 .hero h1 {
     font-size: 3rem;
@@ -203,5 +204,6 @@ footer {
 
 </body>
 </html>
+
 
 
