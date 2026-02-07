@@ -1,24 +1,103 @@
-<section class="plot-details">
-  <h2>Residential Plot for Sale in Manewada, Nagpur</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plot Details | Sandroxx Real Estates</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: Poppins, sans-serif; margin: 20px; }
+  .container { max-width: 800px; margin:auto; }
+  h2 { color:#0f172a; }
+  .price { color:#c48b0f; font-weight:600; }
+  .btn-whatsapp { background:#25d366; color:#fff; padding:12px 25px; text-decoration:none; border-radius:8px; }
+</style>
+</head>
+<body>
 
-  <p><strong>📍 Location:</strong> Manewada, Nagpur</p>
-  <p><strong>📏 Size & Dimensions:</strong> 1200 sq ft (30 × 40 ft)</p>
-  <p><strong>💰 Price:</strong> ₹28,00,000 (Negotiable)</p>
+<div class="container">
+  <h2 id="plot-title">Plot Title</h2>
+
+  <p><strong>📍 Location:</strong> <span id="plot-location"></span></p>
+  <p><strong>📏 Size:</strong> <span id="plot-size"></span></p>
+  <p><strong class="price">💰 Price:</strong> <span id="plot-price"></span></p>
 
   <h3>Plot Highlights</h3>
-  <ul>
-    <li>✔️ Residential Zoned Plot</li>
-    <li>✔️ Corner Plot Facing 30 ft Road</li>
-    <li>✔️ Clear Title & Approved Layout</li>
-    <li>✔️ Water & Electricity Available</li>
-  </ul>
+  <ul id="plot-highlights"></ul>
 
   <h3>Nearby & Connectivity</h3>
-  <ul>
-    <li>📍 1.5 km from NH‑53</li>
-    <li>📍 2 km from Manewada Market</li>
-    <li>📍 Close to School & Public Transport</li>
-  </ul>
+  <ul id="plot-connectivity"></ul>
 
-  <a href="https://wa.me/918805057788" class="btn whatsapp-btn">📱 WhatsApp Now</a>
-</section>
+  <a id="whatsapp-link" href="#" target="_blank" class="btn-whatsapp">📱 WhatsApp Now</a>
+</div>
+
+<script>
+// Example data (later you can make this dynamic)
+const plots = {
+  ozen: {
+    title: "Ozen",
+    location: "Wardha Road, Nagpur",
+    size: "1200 sq ft (30×40 ft)",
+    price: "₹ 22 L – ₹ 30 L",
+    highlights: [
+      "Corner Plot",
+      "30 ft wide road",
+      "Clear Title",
+      "Approved Layout"
+    ],
+    connectivity: [
+      "1.5 km from NH‑53",
+      "2 km from Wardha Road Market"
+    ],
+    whatsapp: "https://wa.me/918805057788"
+  },
+  mangalam: {
+    title: "Mangalam",
+    location: "Koradi Road, Nagpur",
+    size: "1100 sq ft (28×40 ft)",
+    price: "₹ 22 L – ₹ 30 L",
+    highlights: [
+      "Garden Facing",
+      "25 ft road",
+      "Clear Documents",
+      "Electricity & Water"
+    ],
+    connectivity: [
+      "1 km from Koradi Main Road",
+      "Near Bus Stop"
+    ],
+    whatsapp: "https://wa.me/918805057788"
+  }
+};
+
+// Read query param
+const params = new URLSearchParams(window.location.search);
+const plotKey = params.get("plot");
+const data = plots[plotKey] || plots.ozen;
+
+// Fill content
+document.getElementById("plot-title").innerText = data.title + " Plot";
+document.getElementById("plot-location").innerText = data.location;
+document.getElementById("plot-size").innerText = data.size;
+document.getElementById("plot-price").innerText = data.price;
+
+const highlightsList = document.getElementById("plot-highlights");
+data.highlights.forEach(item => {
+  const li = document.createElement("li");
+  li.innerText = "✔️ " + item;
+  highlightsList.appendChild(li);
+});
+
+const connectList = document.getElementById("plot-connectivity");
+data.connectivity.forEach(item => {
+  const li = document.createElement("li");
+  li.innerText = "📍 " + item;
+  connectList.appendChild(li);
+});
+
+document.getElementById("whatsapp-link").href = data.whatsapp;
+
+</script>
+
+</body>
+</html>
